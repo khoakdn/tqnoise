@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TQ4.1</title>
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header>
+      <h1>Noise Heatmap</h1>
+      <div class="nav-links">
+        <a href="#" id="navHistory">History</a>
+        <a href="#" id="navSettings">Settings</a>
+        <span id="lastUpdated">Last updated: --:--</span>
+      </div>
+    </header>
+  
+    <!-- Main Content -->
+    <main>
+      <h2 id="floor-title">TQ 4.1</h2>
+
+      <div id="button-container">
+        <button onclick="switchFloor('floor_TQ4.1')">TQ4.1</button>
+        <button onclick="switchFloor('floor_TQ4.2')">TQ4.2</button>
+        <button onclick="switchFloor('floor_TQ5.2')">TQ5.2</button>
+      </div>
+
+      <div class="layered-map-container">
+        <div class="map-container">
+          <div class="map-placeholder">
+          <svg viewBox="0 0 2400 600" id="floorplan">
+            <defs>
+              <filter id="blur-filter" x="-10" y="-10" width="200" height="200">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
+              </filter>
+            </defs>
+            <g id="top-row" transform="translate(100, 100)"></g>
+            <g id="middle-row" transform="translate(100, 300)"></g>
+            <g id="bottom-row" transform="translate(100, 500)"></g>
+          </svg>
+          </div>
+        </div>
+          <div id="floor-canvas" class="svg-container">
+            <!-- SVG gets injected here -->
+          </div>
+      </div>
+      
+      <div class="legend">
+        <div class="legend-item">
+          <span class="legend-color quiet"></span>
+          <span>Quiet | 0–40 dB</span>
+          <small>Ideal for self study or private tutoring rooms</small>
+        </div>
+        <div class="legend-item">
+          <span class="legend-color moderate"></span>
+          <span>Moderate | 41–60 dB</span>
+          <small>Comparable to normal conversation</small>
+        </div>
+        <div class="legend-item">
+          <span class="legend-color loud"></span>
+          <span>Loud | 61+ dB</span>
+          <small>Similar to busy traffic</small>
+        </div>
+      </div>
+    </main>
+  
+    <script src="./javascript/script4-1.js"></script>
+
+    
+  </body>
+</html>
